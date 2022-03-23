@@ -12,10 +12,12 @@ I'm not alone in my ranting:
 ## Dependencies
 gcc-avr, avr-libc, make, grep, sed, tr, ls, and git.
 
-apt-get install utils-linux make git gcc-avr avr-libc
+apt-get install util-linux make git gcc-avr avr-libc
+
+For Alpine: apk add util-linux make git avrdude avr-libc gcc-avr
 
 avrdude is recommended for downloading, and if the boot loader is running on the mega2650, 
-you use the stk500v2 programmer. For ISP, choose the programmer for ISP.
+you use the stk500v2 programmer. For ISP, choose the programmer for your ISP.
 
 The Makefile.speeduino has some AVRdude things in it.
 
