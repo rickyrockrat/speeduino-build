@@ -1,4 +1,4 @@
-# Speeduino mega2560 Arduino Project source prep.
+# Speeduino mega2560 Arduino Project source prep and build
 #
 # RickyRockrat, Mar 2022.
 #
@@ -46,6 +46,7 @@ speeduino.prepare: AVRTIME.clone SPEEDY.clone
 speeduino.build: speeduino.prepare
 	make -C $(TDIR)/$(SPEEDY_DIR)/speeduino BASE=$(TDIR) build
 	touch $@
+	@echo "Your build is in $(TDIR)/$(SPEEDY_DIR)/speeduino/applet"
 
 clean:
 	-rm speeduino.build 
