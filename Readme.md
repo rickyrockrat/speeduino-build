@@ -27,11 +27,14 @@ Here are the guidelines to building this without PlatformIO, without Python and 
   * git clone https://github.com/rickyrockrat/speeduino-build
   * cd speeduino-build
   * make
+  * make upload
 
 Wow, that was hard. I just replaced a billion lines of code with a make file.
 
 Too simple for you? I thought so. You too can follow the directions below for a real challenge!
 
+The caveat is that I haven't actually tested the binary.  The upload does work if you have avrdude installed.
+It does connect to tunerstudio, but the values seem a bit off on the gauges.
 
 ## Arduino IDE
  * [Getting Started](https://www.arduino.cc/en/Guide)
