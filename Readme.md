@@ -24,7 +24,6 @@ Here are the guidelines to building this without PlatformIO, without Python and 
 
   * git clone https://github.com/rickyrockrat/speeduino-build
   * cd speeduino-build
-  * make prepare
   * make
 
 Wow, that was hard. I just replaced a billion lines of code with a make file.
