@@ -7,7 +7,7 @@ Why do software developers feel the need to create terribly complicated build sy
 This makefile accomplishes what 50 billion lines of code accomplish without the bloat.
 
 I'm not alone in my ranting:
-[Hackaday Arduino comments] (https://hackaday.com/2015/07/28/embed-with-elliot-there-is-no-arduino-language)
+[Hackaday Arduino comments](https://hackaday.com/2015/07/28/embed-with-elliot-there-is-no-arduino-language)
 
 ## Dependencies
 gcc-avr, avr-libc, make, grep, sed, tr, ls, and git.
