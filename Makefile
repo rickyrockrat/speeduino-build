@@ -21,8 +21,15 @@ SPEEDY_URL=https://github.com/noisymime/speeduino
 SPEEDY_VER=202202
 SPEEDY_DIR=speeduino
 
+.PHONY: build help
 
-all: speeduino.build
+PORT?=/dev/ttyACM0
+
+help:
+	@echo "targets are build, clean, clean-all, and upload"
+	@echo " upload takes a PORT=$(PORT), i.e. make upload PORT=$(PORT)"
+
+build: speeduino.build
 
 
 .SECONDARY:
@@ -48,9 +55,14 @@ speeduino.build: speeduino.prepare
 	touch $@
 	@echo "Your build is in $(TDIR)/$(SPEEDY_DIR)/speeduino/applet"
 
+upload: speeduino.build
+	make -C $(TDIR)/$(SPEEDY_DIR)/speeduino upload PORT=$(PORT)
+
 clean:
 	-rm speeduino.build 
 
 clean-all: clean
 	-rm -rf clone *.clone speeduino.prepare
+
+
 	
