@@ -22,7 +22,7 @@ TARGET = speeduino
 #UPLOAD_RATE = 38400
 AVRDUDE_PROGRAMMER = stk500v2
 #AVRDUDE_PROGRAMMER = 2232HIO
-PORT?=/dev/ttyUSB4
+PORT?=/dev/ttyACM0
 MCU = atmega2560
 BOARD = board_avr2560
 # for ArduinoCore-avr
