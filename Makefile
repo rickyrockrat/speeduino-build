@@ -33,17 +33,23 @@ $(TDIR):
 	mkdir -p $@
 
 %.clone: | $(TDIR)
-	git clone --single-branch --branch $($*_VER) --depth =1 $($*_URL) $(TDIR)/$($*_DIR)
+	git clone --single-branch --branch $($*_VER) --depth 1 $($*_URL) $(TDIR)/$($*_DIR)
 	touch $@
 
 # Add time to the core.
 speeduino.prepare: AVRTIME.clone SPEEDY.clone
 	mkdir -p $(TDIR)/$(AVRCORE_DIR)/libraries/Time
 	cd $(TDIR)/$(AVRCORE_DIR)/libraries/Time; ln -s $(TDIR)/$(AVRTIME_DIR) src
-	cp Makefile.speeduino $(TDIR)/$(SPEEDY_DIR)/speeduino
+	cp Makefile.speeduino $(TDIR)/$(SPEEDY_DIR)/speeduino/Makefile
 	touch $@
 
 speeduino.build: speeduino.prepare
 	make -C $(TDIR)/$(SPEEDY_DIR)/speeduino BASE=$(TDIR) build
 	touch $@
+
+clean:
+	-rm speeduino.build 
+
+clean-all: clean
+	-rm -rf clone *.clone speeduino.prepare
 	
