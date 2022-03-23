@@ -68,8 +68,8 @@ GCC_VER=$(shell $(CC) --version|grep GCC|sed 's!.* !!'|tr -d '.' )
 # Native formats for AVR-GCC's -g are stabs [default], or dwarf-2.
 # AVR (extended) COFF requires stabs, plus an avr-objcopy run.
 DEBUG = stabs
-
-OPT = s
+# Using 3 here will fill the flash, and s will give several kB more.
+OPT = 2
 
 # Place -D or -U options here
 CDEFS = -DF_CPU=$(F_CPU)
@@ -241,7 +241,7 @@ extcoff: $(TARGET).elf
 	# Link: create ELF output file from library.
 applet/$(TARGET).elf: applet/core.a applet/$(BOARD).o
 	@echo "GCC_VER=$(GCC_VER) GCC_W=$(GCC_WORKAROUND)"
-	$(CXX) $(ALL_CXXFLAGS) -o $@ applet/$(TARGET).cpp -L. applet/core.a $(LDFLAGS) 
+	$(CXX) $(ALL_CXXFLAGS) -ffunction-sections -Wl,--gc-sections -o $@ applet/$(TARGET).cpp -L. applet/core.a $(LDFLAGS) 
 	$(ELFSIZE)
 
 applet/core.a: $(OBJ) | applet
@@ -259,7 +259,7 @@ applet/core.a: $(OBJ) | applet
 	@echo "ARDINC=$(ARDINC)"
 	$(CC) -c $(ALL_CFLAGS) $< -o $@ 
 
-# For bullshit platformio.
+# For bullshit Arduino
 %.o:%.ino
 	@mkdir -p tmpd
 	cp $< tmpd/$<.cpp

@@ -1,9 +1,10 @@
 #### Build Speeduino for the Mega2560 without the garbage
 
 ## speeduino-build
-This is to build the speeduino as quick and dirty as possible on Linux. 
+This is to build the speeduino as quick and dirty as possible on Linux. <rant>
 For some reason the Arduino project and PlatformIO feel the need to re-invent the wheel. Again.
 Why do software developers feel the need to create terribly complicated build systems and environments?
+</rant>
 This makefile accomplishes what 50 billion lines of code accomplish without the bloat.
 
 I'm not alone in my ranting:
@@ -31,17 +32,17 @@ Here are the guidelines to building this without PlatformIO, without Python and 
 
 Wow, that was hard. I just replaced a billion lines of code with a make file.
 
-Too simple for you? I thought so. You too can follow the directions below for a real challenge!
+The caveat is that I haven't fully tested the binary.  The upload does work if you have avrdude installed.
+It does connect to tunerstudio, and once I set the board under Settings->Engine constants to the UA4C, all the inputs respond as I expect.
 
-The caveat is that I haven't actually tested the binary.  The upload does work if you have avrdude installed.
-It does connect to tunerstudio, but the values seem a bit off on the gauges.
+Too simple for you? I thought so. You too can follow the directions below for a real challenge! It's fun surfing through pages and pages of instructions and steps.
 
 ## Arduino IDE
  * [Getting Started](https://www.arduino.cc/en/Guide)
  * [Install](http://docs.arduino.cc/software/ide-v1/tutorials/Linux)
  * [Getting Stared IDE](https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a)
 
-Lost yet? Try Platform IO. It's fun. It's free!!
+Lost yet? Try Platform IO. It's fun. It's free!! What could possibly go wrong??
 
 ## Platform IO
  * [Platform IO](https://platformio.org/platformio-ide) 
