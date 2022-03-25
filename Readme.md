@@ -54,6 +54,7 @@ MiniCore, MegaCore, MightyCore... I just want a atmega2560. Which is it?
 
 
 ## References
+* [Hardware in the USA](https://wtmtronics.com)
 * [Speduino Source](https://github.com/noisymime/speeduino)
 * [Speduino Wiki](https://wiki.speeduino.com)
 * [Sketch Tunes](https://arduino.github.io/arduino-cli/0.21/sketch-build-process)
