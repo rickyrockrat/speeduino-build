@@ -32,7 +32,7 @@ Here are the guidelines to building this without PlatformIO, without Python and 
 
 Wow, that was hard. I just replaced a billion lines of code with a make file.
 
-The caveat is that I haven't fully tested the binary.  The upload does work if you have avrdude installed.
+I have tested the resulting binary and it runs a 1UZ-FE just fine.  The upload does work if you have avrdude installed.
 It does connect to tunerstudio, and once I set the board under Settings->Engine constants to the UA4C, all the inputs respond as I expect.
 
 Too simple for you? I thought so. You too can follow the directions below for a real challenge! It's fun surfing through pages and pages of instructions and steps.
